@@ -2,7 +2,7 @@
 set -e -x
 
 apt-get --yes --quiet update
-apt-get --yes --quiet install git puppet-common
+apt-get --yes --quiet install git puppet-common apache2
 
 #
 # Fetch puppet configuration from public github repository.
