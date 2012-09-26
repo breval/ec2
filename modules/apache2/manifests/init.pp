@@ -26,4 +26,13 @@ class apache2 {
                         require => Package['apache2']
                 }
 
+		exec { "enable virtual site - apache":
+    			command => "a2ensite eval",
+    			path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+		}
+
+		exec { "bounce apache":
+    			command => "service apache2 reload",
+    			path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+			}
 }
