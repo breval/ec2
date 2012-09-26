@@ -22,8 +22,8 @@ class apache2 {
 
                 file { "/etc/apache2/sites-available/eval":
 			ensure => present,
-                        source => '/etc/puppet/private/www/eval',
-                        require => Package['apache2]
+                        source => "/etc/puppet/private/www/eval",
+                        require => Package['apache2']
                 }
 
 }
