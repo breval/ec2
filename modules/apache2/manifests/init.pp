@@ -9,10 +9,16 @@ class apache2 {
         require => Package["apache2"],
 		}
 		    
-    		file { "/var/www/index.html":
+    		file { "/var/www/eval/index.html":
   			source => 'puppet:///private/www/index.html',
   			require => Package['apache2']
   			
 		}
+
+                file { "/etc/apache2/sites-available/eval":
+                        source => 'puppet:///private/www/eval',
+                        require => Package['apache2']
+
+                }
 
 }
